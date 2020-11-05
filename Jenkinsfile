@@ -4,12 +4,12 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') {
+        stage ('Build') {
             steps {
                 println 'Compiling the application...'
             }
         }
-        stage("Deploy to master"){
+        stage ("Deploy to master") {
           when {
            branch 'master'
          }
@@ -17,7 +17,7 @@ pipeline {
             println 'Deploying to master'
           }
         }
-        stage("Deploy to Production"){
+        stage ("Deploy to Production") {
           when {
            branch 'production'
          }
@@ -25,7 +25,7 @@ pipeline {
             println 'Deploying to production'
           }
         }
-        stage("Deploy to development"){
+        stage ("Deploy to development") {
           when {
             branch 'development'
           }
